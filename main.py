@@ -9,7 +9,10 @@ for question in data.question_data:
     new_question = question_model.Questions(text, answer)
     question_list.append(new_question)
 
-quiz = quiz_brain.QuizGame(question_list)
+game = quiz_brain.QuizGame(question_list)
 
-while quiz.still_has_questions():
-    quiz.ask_question()
+while game.still_has_questions():
+    game.ask_question()
+
+print("You have completed the quiz!")
+print(f"Your final score is {game.score}")
